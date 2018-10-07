@@ -13,7 +13,6 @@ import os
 import time
 import random
 import re
-import colorama.Fore
 from urllib.request import urlretrieve
 from multiprocessing import Process
 
@@ -32,6 +31,7 @@ def bixin(idstart,idend):
         ('Referer', '118.31.40.206:8888')
     ]
     urllib.request.install_opener(opener)
+    #伪装为IPhone访问
     for i in range(idstart, idend+1):
         t=0
         while True:
@@ -44,7 +44,12 @@ def bixin(idstart,idend):
                 if t>=10:
                     with open('/storage/emulated/0/programming/Python3/download/data.txt','a') as f:
                         f.write(str(i)+'\n')
-                        print(Fore.RED+'\n[%d]下载失败，存储至data文件')
+                        print(''+'\n[%d]下载失败，存储至data文件')
+
+                        #
+
+
+
                     break
                 time.sleep(1)
                 t+=1
@@ -111,12 +116,7 @@ def redownload():
 
 if __name__ == '__main__':
     redownload()
-<<<<<<< HEAD
     #主要内容集中在ID：0-35000
     for i in range(0,6):
         p=Process(target=bixin,args=(i*5000,(i+1)*5000))
-=======
-    for i in range(0,0):
-        p=Process(target=bixin,args=(25000+i*1000,25000+(i+1)*1000))
->>>>>>> branch 'test' of https://github.com/WH2099/SomeSmallTools.git
         p.start()

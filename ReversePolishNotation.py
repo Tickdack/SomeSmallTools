@@ -23,7 +23,6 @@ def midtorev(midstring):
     order={"+":1,"-":1,"*":2,"/":2,"(":0,}
     splitregex=r"(\(*)([-+]?\d+)(\)*)([-+*/]?)"
     splitpattern=re.compile(splitregex)
-    getpattern=re.compile(getregex)
     results=splitpattern.findall(allstrip(midstring))
     for seq in results:      
         for i in range(len(seq[0])):

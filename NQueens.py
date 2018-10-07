@@ -11,16 +11,22 @@ def resultprint(result):
         print("-"*result[i]+"+"+"-"*(n-result[i]-1))
         	
 def posok(state,x):
+    """
+    检测目标位置是否符合要求
+    """
     y=len(state)
     for i in range(y):
         if abs(x-state[i]) in (0,y-i):
             return False
     else:
         return True
-
+    
 
 
 def findnextpos(n,state):
+    """
+    寻找下一个符合要求的位置
+    """
     for x in range(n):
         if posok(state,x):
             if len(state)==n-1:
@@ -33,7 +39,6 @@ def main1():
     """
     采用生成器
     """
-    
     n=int(input("How many queens?\n"))
     for index,result in enumerate(findnextpos(n,())):
         print(repr(index)+":")
@@ -42,6 +47,9 @@ def main1():
 
 
 def findallpos(n,state,results):
+    """
+    采用递归方式
+    """
     for x in range(n):
         if posok(state,x):
             if len(state)==n-1:
@@ -53,7 +61,7 @@ def findallpos(n,state,results):
 
 def main2():
     """
-    常规
+    递归方式
     """
     n=int(input("How many queens?\n"))
     results=[]

@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+
 '利用正则表达式进行批量文件重命名'
 
 __author__ = 'WH-2099'
