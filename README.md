@@ -22,4 +22,6 @@
 > > 简单的爬虫批量获取~~笔芯网~~福利图片
 > 
 > 文件批量重命名.py
-> >通过正则表达式批量重命名文件
+> >通过正则表达式批量重命名文件  
+
+view it in browser:https://djwblw.github.io/SomeSmallTools/
